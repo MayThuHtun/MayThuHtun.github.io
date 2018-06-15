@@ -6,7 +6,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-		    navigator.serviceWorker.register('{{url_for('static',filenam='sw.js')}}')
+		    navigator.serviceWorker.register('{{url_for('static',filename='sw.js')}}')
                     .then(function() {
                         console.log("Service Worker Registered");
                     });
@@ -29,7 +29,7 @@
     <title>PWA Fire Codelab Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="shortcut icon" href="icons/pwafire192white.png">
+    <link rel="shortcut icon" href="{{url_for('static',filename='pwafire192white.png')}}">
 
 </head>
 
@@ -125,7 +125,7 @@
                     </header>
 
                     <p>
-                        I am a Stufent in Computer University Mandalay.
+                        I am a Student in Computer University Mandalay.
                         <ul class="actions spinX">
                             <li>
                                 <a href="https://github.com/MayThuHtun" class="button small forward">Expand</a>
@@ -206,7 +206,7 @@
 
                     </header>
 
-                    <form name="contactform" method="post" action="assets/send-email.php">
+		    <form name="contactform" method="post" action="{{url_for('static',filename='send-email.php')}}">
 
                         <div class="field half first">
 
@@ -252,6 +252,6 @@
         </footer>
 
     </div>
-    <script src="assets/buttons-navigate.js"></script>
+    <script src="{{url_for('static',filename='buttons-navigate.js')}}"></script>
 </body>
 </html>
